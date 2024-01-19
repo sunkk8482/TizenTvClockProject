@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TizenXamlApp1"
+             x:Class="TizenXamlApp1.MainPage"
+             
+             >
+
+    <AbsoluteLayout>
+        <!--배경화면 gif 파일을 담을 곳 -->
+        <Image x:Name="gifImageView" IsAnimationPlaying="True" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
+        <!--아날로그 시계의 배경이 될 해와 달 이미지를 담을 곳 -->
+        <Image x:Name="pngImageView" AbsoluteLayout.LayoutBounds="260,70,400,400"/>
+        <AbsoluteLayout x:Name="absoluteLayout" AbsoluteLayout.LayoutBounds="260,70,400,400" SizeChanged="OnAbsoluteLayoutSizeChanged">
+                <BoxView x:Name="hourHand" Color="Black" />
+                <BoxView x:Name="minuteHand" Color="Black" />
+                <BoxView x:Name="secondHand" Color="Black" />
+         </AbsoluteLayout>
+        <!--하늘에서 움직이는 구름을 표현할 곳-->
+        <Image x:Name="skyImageView" AbsoluteLayout.LayoutBounds="0,-100,1920,1080" Source="sky.png"/>
+        <!--디지털 시계-->
+        <Label x:Name="clockLabel" FontSize="150" AbsoluteLayout.LayoutBounds="150,500,800,150" HorizontalOptions="FillAndExpand"/>
+        <!--오늘 날짜-->
+        <Label x:Name="whatistoday" AbsoluteLayout.LayoutBounds="250,650,800,150" FontSize="50"/>
+        <!--현재 날씨-->
+        <Label x:Name="weather" AbsoluteLayout.LayoutBounds="250,725,800,150" FontSize="50"/>
+        <!--추천 당첨번호-->
+        <Label x:Name="resultLabel"  AbsoluteLayout.LayoutBounds="1560,100,400,100" Text="추천당첨번호" FontSize="50" TextColor="Green" LineBreakMode="NoWrap" FontAttributes="Bold"/>
+        <AbsoluteLayout x:Name="result1"   AbsoluteLayout.LayoutBounds="1500,200,100,100">
+            <Image Source="circle_image.png"  />
+            <Label x:Name="resultLabel1" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+        </AbsoluteLayout>
+        <AbsoluteLayout x:Name="result2" AbsoluteLayout.LayoutBounds="1650,200,100,100">
+            <Image Source="circle_image.png" />
+            <Label x:Name="resultLabel2" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+         </AbsoluteLayout>
+         <AbsoluteLayout x:Name="result3" AbsoluteLayout.LayoutBounds="1800,200,100,100">
+                <Image Source="circle_image.png"  />
+               <Label x:Name="resultLabel3" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+         </AbsoluteLayout>
+            <AbsoluteLayout x:Name="result4" AbsoluteLayout.LayoutBounds="1500,350,100,100">
+                <Image Source="circle_image.png"  />
+                <Label x:Name="resultLabel4" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout x:Name="result5" AbsoluteLayout.LayoutBounds="1650,350,100,100">
+                <Image Source="circle_image.png"  />
+                <Label x:Name="resultLabel5" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout x:Name="result6" AbsoluteLayout.LayoutBounds="1800,350,100,100">
+                <Image Source="circle_image.png"  />
+                <Label x:Name="resultLabel6" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+         
+
+        <!--지난 회차 당첨번호-->
+        <Label x:Name="aresultLabel"  AbsoluteLayout.LayoutBounds="950,100,400,100" FontSize="50" TextColor="Red" LineBreakMode="NoWrap" FontAttributes="Bold"/>
+
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="900,200,100,100">
+                <Image x:Name="aresult1" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel1" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="1050,200,100,100">
+                <Image x:Name="aresult2" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel2" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="1200,200,100,100">
+                <Image x:Name="aresult3" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel3" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="900,350,100,100">
+                <Image x:Name="aresult4" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel4" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="1050,350,100,100">
+                <Image x:Name="aresult5" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel5" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50"  FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="1200,350,100,100">
+                <Image x:Name="aresult6" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel6" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="1050,500,100,100">
+                <Image x:Name="aresult7" Source="rcircle_image.png"  />
+                <Label x:Name="aresultLabel7" TextColor="Black" AbsoluteLayout.LayoutBounds="30,25,50,50" FontAttributes="Bold"/>
+            </AbsoluteLayout>
+        <Label x:Name="correct" AbsoluteLayout.LayoutBounds="900,650,400,100" FontSize="40" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="Center" BackgroundColor="Red"/>
+
+
+
+        <!--버튼-->
+            <Button x:Name="Button" AbsoluteLayout.LayoutBounds="1500,650,400,100" Text="번호 생성" TextColor="Wheat" FontSize="50" FontAttributes="Bold" />
+            <Button x:Name="Button2" AbsoluteLayout.LayoutBounds="1500,800,400,100" Text="운세뽑기" TextColor="Wheat" FontSize="50" FontAttributes="Bold" />
+                
+            
+        <!--오늘의 운세-->
+            <AbsoluteLayout x:Name="fortunelayout" AbsoluteLayout.LayoutBounds="0,930,1920,150">
+                <BoxView x:Name="fortuneback" AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Color="Black"/>
+                <Label x:Name="fortune" LineBreakMode="NoWrap" Text="버튼을 눌러 운세를 뽑아주세요"  FontSize="100"  />
+            </AbsoluteLayout>
+
+            
+            
+            
+        </AbsoluteLayout>
+       
+
+
+
+</ContentPage>
